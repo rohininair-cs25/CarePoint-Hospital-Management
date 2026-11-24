@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>CarePoint — Hospital Management</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head>
+<body>
+<div class="app-shell">
+<aside class="sidebar">
+ <div class="brand"><div class="brand-mark">✚</div><div><b>carepoint</b><small>HOSPITAL PORTAL</small></div></div>
+ <div class="side-label">WORKSPACE</div>
+ <button class="nav active" data-view="overview"><span>▦</span> Overview</button>
+ <button class="nav" data-view="patients"><span>♙</span> Patients <em id="patientNavCount">0</em></button>
+ <button class="nav" data-view="doctors"><span>⚕</span> Doctors</button>
+ <button class="nav" data-view="appointments"><span>▣</span> Appointments</button>
+ <div class="sidebar-bottom"><div class="help-card"><div class="help-icon">✦</div><b>Need a hand?</b><p>Manage your hospital records from one simple workspace.</p></div><div class="profile"><div class="avatar">AD</div><div><b>Administrator</b><small>Hospital admin</small></div><span>•••</span></div></div>
+</aside>
+<main class="main">
+ <header class="topbar"><div class="mobile-brand">✚ carepoint</div><div class="crumb">Workspace <span>/</span> <b id="crumbName">Overview</b></div><div class="top-right"><span class="live-dot"></span><span>System operational</span><div class="top-avatar">AD</div></div></header>
+ <div class="content">
+  <section class="page-heading"><div><div class="eyebrow">TUESDAY · HOSPITAL ADMINISTRATION</div><h1 id="pageTitle">Good day, Administrator <span>✦</span></h1><p id="pageSubtitle">Here’s what’s happening at your hospital today.</p></div><div class="date-chip" id="todayDate">Today</div></section>
+  <section id="overviewView">
+   <div class="stats-grid">
+    <article class="stat-card teal"><div class="stat-top"><span>Total patients</span><span class="stat-icon">♙</span></div><strong id="statPatients">0</strong><small><i>●</i> Registered in database</small></article>
+    <article class="stat-card violet"><div class="stat-top"><span>Medical team</span><span class="stat-icon">⚕</span></div><strong id="statDoctors">0</strong><small>Registered doctors</small></article>
+    <article class="stat-card amber"><div class="stat-top"><span>Appointments</span><span class="stat-icon">▣</span></div><strong id="statAppointments">0</strong><small>All scheduled records</small></article>
+    <article class="stat-card rose"><div class="stat-top"><span>Pending</span><span class="stat-icon">◷</span></div><strong id="statPending">0</strong><small>Awaiting appointment</small></article>
+   </div>
+   <div class="overview-grid">
+    <section class="panel quick-panel"><div class="panel-title"><div><h2>Quick actions</h2><p>Jump straight into common tasks.</p></div><span class="spark">✦</span></div><div class="quick-actions">
+      <button class="quick-action" data-go="patients"><span class="qa-icon mint">＋</span><span><b>Register patient</b><small>Add a new patient record</small></span><span class="arrow">↗</span></button>
+      <button class="quick-action" data-go="doctors"><span class="qa-icon lilac">⚕</span><span><b>Add doctor</b><small>Update your medical team</small></span><span class="arrow">↗</span></button>
+      <button class="quick-action" data-go="appointments"><span class="qa-icon peach">▣</span><span><b>Book appointment</b><small>Schedule a patient visit</small></span><span class="arrow">↗</span></button>
+    </div></section>
+    <section class="panel welcome-panel"><div class="welcome-orb">✚</div><div class="eyebrow">CARE THAT CONNECTS</div><h2>One place for<br>better patient care.</h2><p>Keep patient information, doctors and appointments organised with CarePoint.</p><span class="welcome-line"></span></section>
+   </div>
+   <section class="panel recent-panel"><div class="panel-title"><div><h2>Recent patients</h2><p>Your latest registered patient records.</p></div><button class="text-button" data-go="patients">View all patients ↗</button></div><div class="table-wrap"><table><thead><tr><th>PATIENT</th><th>AGE</th><th>GENDER</th><th>PHONE</th><th>BLOOD GROUP</th></tr></thead><tbody id="recentPatients"><tr><td colspan="5" class="empty">Loading records...</td></tr></tbody></table></div></section>
+  </section>
+  <section id="moduleView" class="hidden">
+   <section class="panel module-panel">
+    <div class="module-head"><div><div class="eyebrow" id="moduleEyebrow">MANAGE RECORDS</div><h2 id="moduleTitle">Patients</h2><p id="moduleDescription">Add, view, edit and remove patient records.</p></div><button class="primary-btn" id="addButton">＋ Add patient</button></div>
+    <div class="toolbar"><div class="search-box"><span>⌕</span><input id="searchInput" placeholder="Search records..."></div><span class="record-count" id="recordCount">0 records</span></div>
+    <div id="moduleFormWrap" class="form-wrap hidden"><div class="form-head"><div><h3 id="formHeading">Add new patient</h3><p>Fill in the details and save the record.</p></div><button id="closeForm" class="close-btn">✕</button></div><form id="recordForm" class="record-form"></form></div>
+    <div class="table-wrap"><table><thead id="tableHead"></thead><tbody id="moduleRows"></tbody></table></div>
+   </section>
+  </section>
+  <footer>CarePoint Hospital Portal <span>·</span> Academic project demo · Use fictional test data</footer>
+ </div>
+</main>
+</div>
+<div id="toast" class="toast"></div>
+<script src="app.js"></script>
+</body></html>
